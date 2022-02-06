@@ -1,22 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
+    <Filter Include="headers">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="headers\libs">
+      <UniqueIdentifier>{449d32fd-5fbf-4296-9a2b-d6c538fe433f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\libs\data_structures">
+      <UniqueIdentifier>{cc055514-c81f-4ab4-aaef-4a88f9710563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\libs\data_structures\vector">
+      <UniqueIdentifier>{5697eb0e-713b-46c7-b0cd-a30ebf5a43bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="sources\libs">
+      <UniqueIdentifier>{f058dc8f-f57b-4b34-b10c-b30a5e25144c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\libs\data_structures">
+      <UniqueIdentifier>{ce97d765-8990-4cb4-a8f7-3b40c5ce62c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\libs\data_structures\vector">
+      <UniqueIdentifier>{161e5641-e82c-4ab5-9c2d-c4388289c847}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="basics_of_programming_course.cpp">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="libs\data_structures\vector\vector.h">
+      <Filter>headers\libs\data_structures\vector</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="libs\data_structures\vector\vector.c">
+      <Filter>sources\libs\data_structures\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="core.c">
+      <Filter>sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
