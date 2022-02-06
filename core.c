@@ -72,8 +72,6 @@ void test( ) {
 }
 
 int main( ) {
-	vector v = createVector( 0 );
-
     test( );
 
 	return 0;
