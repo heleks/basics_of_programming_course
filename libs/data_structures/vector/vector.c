@@ -12,7 +12,7 @@ vector createVector( size_t n ) {
 }
 
 void reserve( vector* v , size_t newCapacity ) {
-	v->size = v->size > newCapacity ? newCapacity : v->size;
+	v->size = v->size < newCapacity ? newCapacity : v->size;
 
 	if ( ( v->data = ( int* )realloc( v->data , sizeof( int ) * newCapacity ) ) != NULL )
 		v->capacity = newCapacity;
