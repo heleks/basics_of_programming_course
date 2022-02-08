@@ -12,10 +12,7 @@ vector createVector( size_t n ) {
 }
 
 void reserve( vector* v , size_t newCapacity ) {
-	if ( newCapacity == 0 )
-		v->data = NULL;
-	else if ( v->size > newCapacity )
-		v->size = newCapacity;
+	v->size = v->size > newCapacity ? newCapacity : v->size;
 
 	if ( ( v->data = ( int* )realloc( v->data , sizeof( int ) * newCapacity ) ) != NULL )
 		v->capacity = newCapacity;
@@ -34,7 +31,7 @@ void shrinkToFit( vector* v ) {
 }
 
 void deleteVector( vector* v ) {
-	free( v->data );
+	reserve( v , 0 );
 }
 
 bool isEmpty( vector* v ) {
@@ -65,7 +62,7 @@ void popBack( vector* v ) {
 		exit( 1 );
 	}
 	
-	v->size--;
+	--v->size;
 }
 
 
