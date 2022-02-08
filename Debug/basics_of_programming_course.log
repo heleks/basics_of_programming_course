@@ -1,5 +1,0 @@
-﻿  core.c
-C:\Users\Heleks\source\repos\basics_of_programming_course\basics_of_programming_course\core.c(6,9): warning C4101: 'v': unreferenced local variable
-  vector.c
-  Generating Code...
-  basics_of_programming_course.vcxproj -> C:\Users\Heleks\source\repos\basics_of_programming_course\Debug\basics_of_programming_course.exe
