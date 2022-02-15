@@ -27,10 +27,19 @@
     <Filter Include="sources\libs\data_structures\vector">
       <UniqueIdentifier>{161e5641-e82c-4ab5-9c2d-c4388289c847}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sources\libs\data_structures\matrix">
+      <UniqueIdentifier>{870c0d2d-bca2-45de-9032-758bd87a3905}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\libs\data_structures\matrix">
+      <UniqueIdentifier>{ff22f630-a98b-4088-afd5-0c3d9fae038a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\data_structures\vector\vector.h">
       <Filter>headers\libs\data_structures\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\data_structures\matrix\matrix.h">
+      <Filter>headers\libs\data_structures\matrix</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +48,12 @@
     </ClCompile>
     <ClCompile Include="core.c">
       <Filter>sources</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\data_structures\vector\tests.c">
+      <Filter>sources\libs\data_structures\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\data_structures\matrix\matrix.c">
+      <Filter>sources\libs\data_structures\matrix</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
