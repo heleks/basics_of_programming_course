@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdint.h>
 #include <assert.h>
 #include "vector.h"
 
@@ -35,7 +33,7 @@ void test_atVector_notEmptyVector1( ) {
     vector v = createVector( 1 );
     pushBack( &v , 0 );
 
-    assert( v.data == atVector( v , 0 ) );
+    assert( v.data == atVector( &v , 0 ) );
 }
 
 void test_atVector_notEmptyVector2( ) {
@@ -43,7 +41,7 @@ void test_atVector_notEmptyVector2( ) {
     pushBack( &v , 0 );
     pushBack( &v , 1 );
 
-    assert( v.data + 1 == atVector( v , 1 ) );
+    assert( v.data + 1 == atVector( &v , 1 ) );
 }
 
 void test_back_oneElementInVector( ) {
@@ -51,14 +49,14 @@ void test_back_oneElementInVector( ) {
     pushBack( &v , 0 );
     pushBack( &v , 1 );
 
-    assert( v.data[ v.size - 1 ] == back( v ) );
+    assert( v.data[ v.size - 1 ] == back( &v ) );
 }
 
 void test_front_oneElementInVector( ) {
     vector v = createVector( 1 );
     pushBack( &v , 0 );
 
-    assert( v.data[ v.size - 1 ] == front( v ) );
+    assert( v.data[ v.size - 1 ] == front( &v ) );
 }
 
 void test( ) {

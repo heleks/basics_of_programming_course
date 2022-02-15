@@ -55,5 +55,8 @@
     <ClCompile Include="libs\data_structures\matrix\matrix.c">
       <Filter>sources\libs\data_structures\matrix</Filter>
     </ClCompile>
+    <ClCompile Include="libs\data_structures\matrix\tests.c">
+      <Filter>sources\libs\data_structures\matrix</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
