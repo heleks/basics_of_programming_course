@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="core.c" />
     <ClCompile Include="libs\data_structures\matrix\matrix.c" />
+    <ClCompile Include="libs\data_structures\matrix\tasks.c" />
     <ClCompile Include="libs\data_structures\matrix\tests.c" />
     <ClCompile Include="libs\data_structures\vector\tests.c" />
     <ClCompile Include="libs\data_structures\vector\vector.c" />
