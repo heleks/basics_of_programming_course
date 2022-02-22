@@ -195,3 +195,46 @@ void sortByDistance( matrix m ) {
     insertionSortRowsMatrixByRowCriteriaF( m , getDistance );
 }
 
+// task 10
+
+int long_long_cmp( const void* x , const void* y ) {
+    long long a = *( long long* )x;
+    long long b = *( long long* )y;
+
+    if ( a < b )
+        return -1;
+    else if ( a > b )
+        return 1;
+    else
+        return 0;
+}
+
+int countNUnique( const long long* a , int n ) {
+    if ( n == 0 )
+        return 0;
+    else {
+        long long element = a[ 0 ];
+        int nUnique = 1;
+
+        for ( int i = 1; i < n; i++ )
+            if ( a[ i ] != element ) {
+                element = a[ i ];
+                ++nUnique;
+            }
+
+        return nUnique;
+    }
+}
+
+int countEqClassesByRowsSum( matrix m ) {
+    long long* sumRows = ( long long* )malloc( sizeof( long long ) * m.nRows );
+
+    for ( int i = 0; i < m.nRows; i++ )
+        sumRows[ i ] = getSum( m.values[ i ] , m.nCols );
+
+    int nUnique = countNUnique( sumRows , m.nRows );
+
+    free( sumRows );
+
+    return nUnique;
+}
