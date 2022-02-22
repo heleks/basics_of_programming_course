@@ -300,3 +300,37 @@ int countNonDescendingRowsMatrices( matrix* ms , int nMatrix ) {
     return count;
 }
 
+//task 14
+
+int countZeroValues( int* a , int size ) {
+    int count = 0;
+
+    for ( int i = 0; i < size; ++i )
+        count += a[ i ] == 0;
+   
+    return count;
+}
+
+int countZeroRows( matrix m ) {
+    int count = 0;
+
+    for ( int i = 0; i < m.nRows; ++i )
+        count += countZeroValues( m.values[ i ] , m.nCols ) == m.nCols;
+    
+    return count;
+}
+
+void printMatrixWithMaxZeroRows( matrix* ms , int nMatrix ) {
+    int maxZeroRows = countZeroRows( ms[ 0 ] );
+
+    for ( int i = 1; i < nMatrix; ++i ) {
+        int counterZeroRows = countZeroRows( ms[ i ] );
+
+        if ( maxZeroRows < counterZeroRows )
+            maxZeroRows = counterZeroRows;
+    }
+
+    for ( int i = 0; i < nMatrix; ++i )
+        if ( countZeroRows( ms[ i ] ) == maxZeroRows )
+            outputMatrix( ms[ i ] );
+}
