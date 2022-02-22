@@ -259,3 +259,16 @@ int getNSpecialElement( matrix m ) {
     return count;
 }
 
+// task 12
+
+position getLeftMin( matrix m ) {
+    return getMinValuePos( m );
+}
+
+void swapPenultimateRow( matrix m ) {
+    int colIndex = getLeftMin( m ).colIndex;
+
+    for ( int i = m.nCols - 1; i >= 0; --i )
+        m.values[ m.nRows - 2 ][ i ] = m.values[ i ][ colIndex ];
+}
+
