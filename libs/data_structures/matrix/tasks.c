@@ -26,3 +26,20 @@ int getMax( int* a , int n ) {
 void sortRowsByMaxElement( matrix m ) {
     insertionSortRowsMatrixByRowCriteria( m , getMax );
 }
+
+//task 3
+
+int getMin( int* a , int n ) {
+    int minValue = a[ 0 ];
+
+    for ( int i = 0; i < n; ++i )
+        if ( a[ i ] < minValue )
+            minValue = a[ i ];
+
+    return minValue;
+}
+
+void sortColsByMinElement( matrix m ) {
+    insertionSortColsMatrixByColCriteria( m , getMin );
+}
+
