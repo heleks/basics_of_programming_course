@@ -72,11 +72,39 @@ void swapColumns( matrix m , int j1 , int j2 ) {
 }
 
 void insertionSortRowsMatrixByRowCriteria( matrix m , int ( *criteria )( int* , int ) ) {
-	//todo
+	int* criteriaArray = ( int* )malloc( sizeof( int ) * m.nRows );
+
+	for ( int i = 0; i < m.nRows; ++i )
+		criteriaArray[ i ] = criteria( m.values[ i ] , m.nCols );
+
+	for ( int i = 0; i < m.nRows; ++i )
+		for ( int j = i; j > 0 && criteriaArray[ j - 1 ] > criteriaArray[ j ]; --j ) {
+			swap( &criteriaArray[ j - 1 ] , &criteriaArray[ j ] , sizeof( int ) );
+			swapRows( m , j , j - 1 );
+		}
+
+	free( criteriaArray );
 }
 
 void insertionSortColsMatrixByColCriteria( matrix m , int ( *criteria )( int* , int ) ) {
-	//todo
+	int* criteriaArray = ( int* )malloc( sizeof( int ) * m.nCols );
+	int* addArray = ( int* )malloc( sizeof( int ) * m.nRows );
+
+	for ( int i = 0; i < m.nCols; ++i ) {
+		for ( int j = 0; j < m.nRows; ++j )
+			addArray[ j ] = m.values[ j ][ i ];
+		criteriaArray[ i ] = criteria( addArray , m.nRows );
+	}
+
+	for ( int i = 0; i < m.nCols; ++i ) {
+		for ( int j = i; j > 0 && criteriaArray[ j - 1 ] > criteriaArray[ j ]; --j ) {
+			swap( &criteriaArray[ j - 1 ] , &criteriaArray[ j ] , sizeof( int ) );
+			swapColumns( m , j , j - 1 );
+		}
+	}
+
+	free( criteriaArray );
+	free( addArray );
 }
 
 bool isSquareMatrix( matrix m ) {

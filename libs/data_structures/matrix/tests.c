@@ -61,12 +61,36 @@ void test_swapColumns( ) {
     freeMemMatrix( m );
 }
 
+int arraySum( int* a , int n ) {
+    int sum = 0;
+    for ( int i = 0; i < n; ++i )
+        sum += a[ i ];
+
+    return sum;
+}
+
 void test_insertionSortRowsMatrixByRowCriteria( ) {
-    // todo
+    matrix m1 = createMatrixFromArray( ( int[ ] ) { 1 , 2 , 3 ,  4 , 5 , 6 , 7 , 8 , 9 } , 3 , 3 );
+    matrix m2 = createMatrixFromArray( ( int[ ] ) { 7 , 8 , 9 , 4 , 5 , 6 , 1 , 2 , 3 } , 3 , 3 );
+
+    insertionSortRowsMatrixByRowCriteria( m2 , arraySum );
+
+    assert( areTwoMatricesEqual( m1 , m2 ) );
+
+    freeMemMatrix( m1 );
+    freeMemMatrix( m2 );
 }
 
 void test_insertionSortColsMatrixByColCriteria( ) {
-    // todo
+    matrix m1 = createMatrixFromArray( ( int[ ] ) { 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 } , 3 , 3 );
+    matrix m2 = createMatrixFromArray( ( int[ ] ) { 3 , 2 , 1 , 6 , 5 , 4 , 9 , 8 , 7 } , 3 , 3 );
+
+    insertionSortColsMatrixByColCriteria( m2 , arraySum );
+
+    assert( areTwoMatricesEqual( m1 , m2 ) );
+
+    freeMemMatrix( m1 );
+    freeMemMatrix( m2 );
 }
 
 void test_isSquareMatrix1( ) {

@@ -1,4 +1,8 @@
 #include "matrix.h"
+#include <stdlib.h>
+#include <math.h>
+
+//task 1
 
 void swapMinMaxRows( matrix m ) {
     int min = getMinValuePos( m ).rowIndex;
@@ -7,4 +11,18 @@ void swapMinMaxRows( matrix m ) {
     swapRows( m , min , max );
 }
 
-//https://prnt.sc/26wigmu
+//task 2
+
+int getMax( int* a , int n ) {
+    int maxValue = a[ 0 ];
+
+    for ( int i = 0; i < n; ++i )
+        if ( a[ i ] > maxValue )
+            maxValue = a[ i ];
+
+    return maxValue;
+}
+
+void sortRowsByMaxElement( matrix m ) {
+    insertionSortRowsMatrixByRowCriteria( m , getMax );
+}
