@@ -41,6 +41,9 @@
     <ClInclude Include="libs\data_structures\matrix\matrix.h">
       <Filter>headers\libs\data_structures\matrix</Filter>
     </ClInclude>
+    <ClInclude Include="libs\data_structures\matrix\matrixD.h">
+      <Filter>headers\libs\data_structures\matrix</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\data_structures\vector\vector.c">
@@ -59,6 +62,9 @@
       <Filter>sources\libs\data_structures\matrix</Filter>
     </ClCompile>
     <ClCompile Include="libs\data_structures\matrix\tasks.c">
+      <Filter>sources\libs\data_structures\matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\data_structures\matrix\matrixD.c">
       <Filter>sources\libs\data_structures\matrix</Filter>
     </ClCompile>
   </ItemGroup>

@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="core.c" />
     <ClCompile Include="libs\data_structures\matrix\matrix.c" />
+    <ClCompile Include="libs\data_structures\matrix\matrixD.c" />
     <ClCompile Include="libs\data_structures\matrix\tasks.c" />
     <ClCompile Include="libs\data_structures\matrix\tests.c" />
     <ClCompile Include="libs\data_structures\vector\tests.c" />
@@ -28,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\data_structures\matrix\matrix.h" />
+    <ClInclude Include="libs\data_structures\matrix\matrixD.h" />
     <ClInclude Include="libs\data_structures\vector\vector.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
