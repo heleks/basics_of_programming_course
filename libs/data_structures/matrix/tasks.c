@@ -2,6 +2,7 @@
 #include "matrixD.h"
 #include <stdlib.h>
 #include <math.h>
+#include <assert.h>
 
 //task 1
 
@@ -334,3 +335,46 @@ void printMatrixWithMaxZeroRows( matrix* ms , int nMatrix ) {
         if ( countZeroRows( ms[ i ] ) == maxZeroRows )
             outputMatrix( ms[ i ] );
 }
+
+//task 15
+
+double getMatrixAbsValue( matrixD m ) {
+    double matrixAbsValue = 0.f;
+
+    for ( int i = 0; i < m.nRows; ++i )
+        for ( int j = 0; j < m.nCols; ++j )
+            matrixAbsValue += fabs( m.values[ i ][ j ] );
+
+    return matrixAbsValue;
+}
+
+matrixD getLowerNormMatrix( matrixD* ms , double* matricesLowerNorm , int nMatrix , float** skip ) {
+    bool flag = skip == ms[ 0 ].values;
+    double minValue = flag ? matricesLowerNorm[ 1 ] : matricesLowerNorm[ 0 ];
+    matrixD minMatrix = flag ? ms[ 1 ] : ms[ 0 ];
+
+    for ( int i = 1 + flag; i < nMatrix; ++i )
+        if ( matricesLowerNorm[ i ] < minValue && skip != ms[ i ].values ) {
+            minValue = matricesLowerNorm[ i ];
+            minMatrix = ms[ i ];
+        }
+
+    return minMatrix;
+}
+
+void printLowerNormMatrices( matrixD* ms , int nMatrix ) {
+    double* matricesLowerNorm = ( double* )malloc( sizeof( double ) * nMatrix );
+
+    for ( int i = 0; i < nMatrix; ++i )
+        matricesLowerNorm[ i ] = getMatrixAbsValue( ms[ i ] );
+
+    matrixD lowerNormMatrices[ 2 ] = { NULL , NULL };
+
+    lowerNormMatrices[ 0 ] = getLowerNormMatrix( ms , matricesLowerNorm , nMatrix , NULL );
+    lowerNormMatrices[ 1 ] = getLowerNormMatrix( ms , matricesLowerNorm , nMatrix , lowerNormMatrices[ 0 ].values );
+
+    free( matricesLowerNorm );
+
+    outputMatricesD( lowerNormMatrices , 2 );
+}
+

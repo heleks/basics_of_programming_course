@@ -67,5 +67,8 @@
     <ClCompile Include="libs\data_structures\matrix\matrixD.c">
       <Filter>sources\libs\data_structures\matrix</Filter>
     </ClCompile>
+    <ClCompile Include="libs\data_structures\matrix\tasks_tests.c">
+      <Filter>sources\libs\data_structures\matrix</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
