@@ -1,6 +1,7 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1091,5): warning MSB8027: Two or more files with the name of tests.c will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are libs\data_structures\matrix\tests.c, libs\data_structures\vector\tests.c.
-  matrixD.c
-  LINK : C:\Users\Heleks\source\repos\basics_of_programming_course\Debug\basics_of_programming_course.exe not found or not built by the last incremental link; performing full link
-matrixD.obj : error LNK2005: _inputMatrices already defined in matrix.obj
-Debug\tests.obj : warning LNK4042: object specified more than once; extras ignored
-C:\Users\Heleks\source\repos\basics_of_programming_course\Debug\basics_of_programming_course.exe : fatal error LNK1169: one or more multiply defined symbols found
+  core.c
+C:\Users\Heleks\source\repos\basics_of_programming_course\basics_of_programming_course\core.c(20,39): warning C4133: '==': incompatible types - from 'double **' to 'float **'
+C:\Users\Heleks\source\repos\basics_of_programming_course\basics_of_programming_course\core.c(25,74): warning C4133: '!=': incompatible types - from 'double **' to 'float **'
+C:\Users\Heleks\source\repos\basics_of_programming_course\basics_of_programming_course\core.c(44,115): warning C4133: 'function': incompatible types - from 'double **' to 'float **'
+C:\Users\Heleks\source\repos\basics_of_programming_course\basics_of_programming_course\core.c(41,1): warning C4047: 'initializing': 'int' differs in levels of indirection from 'void *'
+  basics_of_programming_course.vcxproj -> C:\Users\Heleks\source\repos\basics_of_programming_course\Debug\basics_of_programming_course.exe
