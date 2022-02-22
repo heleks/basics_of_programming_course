@@ -1,4 +1,5 @@
 #include "matrix.h"
+#include "matrixD.h"
 #include <stdlib.h>
 #include <math.h>
 
@@ -141,5 +142,56 @@ long long findSumOfMaxesOfPseudoDiagonal( matrix m ) {
     }
 
     return sum;
+}
+
+//task 8
+
+int min2( int a , int b ) {
+    return a < b ? a : b;
+}
+
+int getMinInArea( matrix m ) {
+    position maxValue = getMaxValuePos( m );
+    int minInArea = m.values[ maxValue.rowIndex ][ maxValue.colIndex ];
+    int firstColIndex = maxValue.colIndex;
+    int secondColIndex = maxValue.colIndex;
+
+    for ( int i = maxValue.rowIndex - 1; i >= 0; --i ) {
+        if ( secondColIndex + 1 > m.nCols - 1 )
+            secondColIndex = m.nCols - 1;
+        else
+            ++secondColIndex;
+
+        if ( firstColIndex - 1 < 0 )
+            firstColIndex = 0;
+        else
+            --firstColIndex;
+
+        minInArea = min2( minInArea , getMin( m.values[ i ] + firstColIndex , secondColIndex - firstColIndex + 1 ) );
+    }
+
+    return minInArea;
+}
+
+//task 9
+
+float getDistance( int* a , int size ) {
+    double sum = 0.0;
+
+    for ( int i = 0; i < size; ++i )
+        sum += pow( ( double )a[ i ] , 2.0 );
+    
+    return ( float )sqrt( sum );
+}
+
+void insertionSortRowsMatrixByRowCriteriaF( matrix m , float ( *criteria )( int * , int ) ) {
+    for ( int i = 1; i < m.nRows; ++i )
+        for ( int j = i; j > 0; --j ) 
+            if ( criteria( m.values[ j - 1 ] , m.nCols ) > criteria( m.values[ j ] , m.nCols ) ) 
+                swapRows( m , j - 1 , j );
+}
+
+void sortByDistance( matrix m ) {
+    insertionSortRowsMatrixByRowCriteriaF( m , getDistance );
 }
 
