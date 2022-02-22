@@ -17,7 +17,7 @@ void swapMinMaxRows( matrix m ) {
 int getMax( int* a , int n ) {
     int maxValue = a[ 0 ];
 
-    for ( int i = 0; i < n; ++i )
+    for ( int i = 1; i < n; ++i )
         if ( a[ i ] > maxValue )
             maxValue = a[ i ];
 
@@ -33,7 +33,7 @@ void sortRowsByMaxElement( matrix m ) {
 int getMin( int* a , int n ) {
     int minValue = a[ 0 ];
 
-    for ( int i = 0; i < n; ++i )
+    for ( int i = 1; i < n; ++i )
         if ( a[ i ] < minValue )
             minValue = a[ i ];
 
@@ -238,3 +238,24 @@ int countEqClassesByRowsSum( matrix m ) {
 
     return nUnique;
 }
+
+// task 11
+
+int getNSpecialElement( matrix m ) {
+    int count = 0;
+
+    for ( int i = 0; i < m.nCols; ++i ) {
+        int* colArray = ( int* )malloc( sizeof( int ) * m.nRows );
+
+        for ( int j = 0; j < m.nRows; j++ ) 
+            colArray[ j ] = m.values[ j ][ i ];
+
+        if ( getMax( colArray , m.nRows ) * 2 - getSum( colArray , m.nRows ) > 0 )
+            ++count;
+
+        free( colArray );
+    }
+
+    return count;
+}
+
