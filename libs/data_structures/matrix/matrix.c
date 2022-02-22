@@ -48,6 +48,8 @@ void outputMatrix( matrix m ) {
 
 		printf( "\n" );
 	}
+
+	printf( "\n" );
 }
 
 void outputMatrices( matrix* ms , int nMatrices ) {

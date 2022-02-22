@@ -100,3 +100,16 @@ void transposeIfMatrixHasNotEqualSumOfRows( matrix m ) {
     free( sumRows );
 }
 
+//task 6
+
+bool isMutuallyInverseMatrices( matrix m1 , matrix m2 ) {
+    if ( !isSquareMatrix( m1 ) || !isSquareMatrix( m2 ) )
+        return false;
+
+    matrix mul = mulMatrices( m1 , m2 );
+    bool result = isEMatrix( mul );
+    freeMemMatrix( mul );
+
+    return result;
+}
+

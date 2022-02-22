@@ -3,9 +3,7 @@
 #include <assert.h>
 #include "libs/data_structures/matrix/matrix.h"
 
-
 int main( ) {
-	tests( );
-
+	
 	return 0;
 }
