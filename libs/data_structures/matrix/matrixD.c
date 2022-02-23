@@ -57,3 +57,15 @@ void outputMatricesD( matrixD* ms , int nMatrices ) {
     for ( int i = 0; i < nMatrices; ++i )
         outputMatrixD( ms[ i ] );
 }
+
+matrixD* createArrayOfMatrixFromArrayD( const double* a , int nMatrix , int nRows , int nCols ) {
+    matrixD* m = getMemArrayOfMatricesD( nMatrix , nRows , nCols );
+
+    int k = 0;
+    for ( int l = 0; l < nMatrix; ++l )
+        for ( int i = 0; i < nRows; i++ )
+            for ( int j = 0; j < nCols; j++ )
+                m[ l ].values[ i ][ j ] = a[ k++ ];
+
+    return m;
+}

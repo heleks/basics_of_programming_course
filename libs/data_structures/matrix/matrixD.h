@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <malloc.h>
-#include <stdbool.h>
 
 typedef struct matrixD {
     double** values;
@@ -26,5 +25,7 @@ void inputMatricesD( matrixD* ms , int nMatrices );
 void outputMatrixD( matrixD m );
 
 void outputMatricesD( matrixD* ms , int nMatrices );
+
+matrixD* createArrayOfMatrixFromArrayD( const double* a , int nMatrix , int nRows , int nCols );
 
 #endif

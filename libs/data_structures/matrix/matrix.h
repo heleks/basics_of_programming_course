@@ -57,4 +57,6 @@ position getMaxValuePos( matrix m );
 
 matrix createMatrixFromArray( const int* a , int nRows , int nCols );
 
+matrix* createArrayOfMatrixFromArray( const int* a , int nMatrix , int nRows , int nCols );
+
 #endif

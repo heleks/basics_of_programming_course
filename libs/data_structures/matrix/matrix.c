@@ -205,3 +205,15 @@ matrix createMatrixFromArray( const int* a , int nRows , int nCols ) {
 
 	return m;
 }
+
+matrix* createArrayOfMatrixFromArray( const int* a , int nMatrix , int nRows , int nCols ) {
+	matrix* m = getMemArrayOfMatrices( nMatrix , nRows , nCols );
+
+	int k = 0;
+	for ( int l = 0; l < nMatrix; ++l )
+		for ( int i = 0; i < nRows; i++ )
+			for ( int j = 0; j < nCols; j++ )
+				m[ l ].values[ i ][ j ] = a[ k++ ];
+
+	return m;
+}
