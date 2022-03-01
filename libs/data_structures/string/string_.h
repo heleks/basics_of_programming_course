@@ -4,6 +4,9 @@
 #include <stdint.h>
 #include <ctype.h>
 #include <memory.h>
+#include <stdio.h>
+
+#define ASSERT_STRING(expected, got) assertString(expected, got, __FILE__, __FUNCTION__, __LINE__)
 
 size_t strlen_( const char* begin );
 
@@ -24,5 +27,9 @@ char* copy( const char* beginSource , const char* endSource , char* beginDestina
 char* copyIf( char* beginSource , const char* endSource , char* beginDestination , int( *f )( int ) );
 
 char* copyIfReverse( char* rbeginSource , const char* rendSource , char* beginDestination , int( *f )( int ) );
+
+char* getEndOfString( char* str );
+
+void assertString( const char* expected , char* got , char const* fileName , char const* funcName , int line );
 
 #endif

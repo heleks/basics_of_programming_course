@@ -33,6 +33,15 @@
     <Filter Include="headers\libs\data_structures\matrix">
       <UniqueIdentifier>{ff22f630-a98b-4088-afd5-0c3d9fae038a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="headers\libs\data_structures\string">
+      <UniqueIdentifier>{a2866e98-d708-48af-ba99-40a07b264549}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sources\libs\data_structures\string">
+      <UniqueIdentifier>{51fb9cf8-8bb3-4150-8615-02f8792a4d78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\libs\data_structures\string\tasks">
+      <UniqueIdentifier>{084ad15a-44ca-40c5-a867-e8fc8426c918}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\data_structures\vector\vector.h">
@@ -43,6 +52,18 @@
     </ClInclude>
     <ClInclude Include="libs\data_structures\matrix\matrixD.h">
       <Filter>headers\libs\data_structures\matrix</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\data_structures\string\string_.h">
+      <Filter>headers\libs\data_structures\string</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\data_structures\string\tasks\removeNonLetters.h">
+      <Filter>headers\libs\data_structures\string\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\data_structures\string\tasks\all_tasks.h">
+      <Filter>headers\libs\data_structures\string\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\data_structures\string\tasks\removeExtraSpaces.h">
+      <Filter>headers\libs\data_structures\string\tasks</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +90,9 @@
     </ClCompile>
     <ClCompile Include="libs\data_structures\matrix\tasks_tests.c">
       <Filter>sources\libs\data_structures\matrix</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\data_structures\string\string_.c">
+      <Filter>sources\libs\data_structures\string</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

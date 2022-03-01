@@ -25,12 +25,17 @@
     <ClCompile Include="libs\data_structures\matrix\tasks.c" />
     <ClCompile Include="libs\data_structures\matrix\tasks_tests.c" />
     <ClCompile Include="libs\data_structures\matrix\tests.c" />
+    <ClCompile Include="libs\data_structures\string\string_.c" />
     <ClCompile Include="libs\data_structures\vector\tests.c" />
     <ClCompile Include="libs\data_structures\vector\vector.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\data_structures\matrix\matrix.h" />
     <ClInclude Include="libs\data_structures\matrix\matrixD.h" />
+    <ClInclude Include="libs\data_structures\string\string_.h" />
+    <ClInclude Include="libs\data_structures\string\tasks\all_tasks.h" />
+    <ClInclude Include="libs\data_structures\string\tasks\removeExtraSpaces.h" />
+    <ClInclude Include="libs\data_structures\string\tasks\removeNonLetters.h" />
     <ClInclude Include="libs\data_structures\vector\vector.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
