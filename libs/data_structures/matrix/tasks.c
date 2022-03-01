@@ -640,8 +640,3 @@ void tests_tasks( ) {
     test_getLowerNormMatrix( );
 }
 
-int main( ) {
-    tests_tasks( );
-
-    return 0;
-}
