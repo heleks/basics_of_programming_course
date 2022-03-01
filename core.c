@@ -5,7 +5,7 @@
 #include "libs/data_structures/string/tasks/all_tasks.h"
 
 int main( ) {
-	test_removeExtraSpaces( );
+	test_digitToEnd( );
 
 	return 0;
 }

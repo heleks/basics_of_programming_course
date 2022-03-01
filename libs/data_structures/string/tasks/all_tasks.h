@@ -4,5 +4,6 @@
 #include "../string_.h"
 #include "removeNonLetters.h"
 #include "removeExtraSpaces.h"
+#include "digitToEnd.h"
 
 #endif

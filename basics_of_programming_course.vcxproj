@@ -34,6 +34,7 @@
     <ClInclude Include="libs\data_structures\matrix\matrixD.h" />
     <ClInclude Include="libs\data_structures\string\string_.h" />
     <ClInclude Include="libs\data_structures\string\tasks\all_tasks.h" />
+    <ClInclude Include="libs\data_structures\string\tasks\digitToEnd.h" />
     <ClInclude Include="libs\data_structures\string\tasks\removeExtraSpaces.h" />
     <ClInclude Include="libs\data_structures\string\tasks\removeNonLetters.h" />
     <ClInclude Include="libs\data_structures\vector\vector.h" />
