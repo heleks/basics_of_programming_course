@@ -5,8 +5,6 @@
 #include "libs/data_structures/string/tasks/all_tasks.h"
 
 int main( ) {
-	char t[ 100 ] = "2b1c";
-	replaceDigitsToSpaces( t );
-	printf( t );
+	test_replaceDigitsToSpaces( );
 	return 0;
 }

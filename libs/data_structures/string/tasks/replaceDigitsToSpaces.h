@@ -19,5 +19,10 @@ void replaceDigitsToSpaces( char* s ) {
     *( s + len ) = '\0';
 }
 
+void test_replaceDigitsToSpaces( ) {
+    char s[ MAX_STRING_SIZE ] = "3c1z0b1a";
+    replaceDigitsToSpaces( s );
+    ASSERT_STRING( "   c zb a" , s );
+}
 
 #endif
