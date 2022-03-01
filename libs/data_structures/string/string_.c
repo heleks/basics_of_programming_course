@@ -121,6 +121,6 @@ bool getWordReverse( char* rbegin , char* rend , WordDescriptor* word ) {
 	return true;
 }
 
-int charToDigit( char x ) {
+int getDigit( char x ) {
 	return x - '0';
 }

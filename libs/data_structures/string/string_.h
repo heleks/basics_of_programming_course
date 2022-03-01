@@ -48,7 +48,7 @@ bool getWord( char* beginSearch , WordDescriptor* word );
 
 bool getWordReverse( char* rbegin , char* rend , WordDescriptor* word );
 
-int charToDigit( char x );
+int getDigit( char x );
 
 
 #endif

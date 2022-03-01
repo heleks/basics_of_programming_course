@@ -5,5 +5,6 @@
 #include "removeNonLetters.h"
 #include "removeExtraSpaces.h"
 #include "digitToEnd.h"
+#include "replaceDigitsToSpaces.h"
 
 #endif
