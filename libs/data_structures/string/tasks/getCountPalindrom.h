@@ -32,11 +32,9 @@ int getCountPalindromes( char* beginString ) {
     return result;
 }
 
-void test_getCountPalindromes_Palindrome( ) {
-    char s[ ] = "aroora,abba";
+void test_getCountPalindroms( ) {
+    char s[ ] = "abccba,niin";
     assert( 2 == getCountPalindromes( s ) );
 }
-
-
 
 #endif

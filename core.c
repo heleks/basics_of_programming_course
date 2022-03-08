@@ -5,6 +5,6 @@
 #include "libs/data_structures/string/tasks/all_tasks.h"
 
 int main( ) {
-	test_getCountPalindromes_Palindrome( );
+	test_getMergedString( );
 	return 0;
 }

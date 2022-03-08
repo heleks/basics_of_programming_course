@@ -10,5 +10,6 @@
 #include "isOrderedString.h"
 #include "printReversedWords.h"
 #include "getCountPalindrom.h"
+#include "getMergedString.h"
 
 #endif
