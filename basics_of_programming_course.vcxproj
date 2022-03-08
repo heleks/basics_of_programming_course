@@ -39,6 +39,7 @@
     <ClInclude Include="libs\data_structures\string\tasks\getMergedString.h" />
     <ClInclude Include="libs\data_structures\string\tasks\getWordBeforeFirstWordWithA.h" />
     <ClInclude Include="libs\data_structures\string\tasks\getWordsReversed.h" />
+    <ClInclude Include="libs\data_structures\string\tasks\lastWordInFirstStringInSecondString.h" />
     <ClInclude Include="libs\data_structures\string\tasks\printReversedWords.h" />
     <ClInclude Include="libs\data_structures\string\tasks\isOrderedString.h" />
     <ClInclude Include="libs\data_structures\string\tasks\removeExtraSpaces.h" />

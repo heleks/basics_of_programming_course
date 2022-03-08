@@ -13,5 +13,6 @@
 #include "getMergedString.h"
 #include "getWordsReversed.h"
 #include "getWordBeforeFirstWordWithA.h"
+#include "lastWordInFirstStringInSecondString.h"
 
 #endif

@@ -5,6 +5,6 @@
 #include "libs/data_structures/string/tasks/all_tasks.h"
 
 int main( ) {
-	testAll_getWordBeforeFirstWordWithA( );
+	test_lastWordInFirstStringInSecondString1( );
 	return 0;
 }
