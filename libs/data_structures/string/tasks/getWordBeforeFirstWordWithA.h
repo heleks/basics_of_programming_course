@@ -9,14 +9,12 @@ WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA( char* s , char**
 	if ( !getWord( s , &word ) )
 		return EMPTY_STRING;
 
-	if ( find( _bag.words[ 0 ].begin , _bag.words[ 0 ].end , 'a' ) != _bag.words[ 0 ].end ||
-		find( _bag.words[ 0 ].begin , _bag.words[ 0 ].end , 'A' ) != _bag.words[ 0 ].end )
+	if ( find( _bag.words[ 0 ].begin , _bag.words[ 0 ].end , 'a' ) != _bag.words[ 0 ].end || find( _bag.words[ 0 ].begin , _bag.words[ 0 ].end , 'A' ) != _bag.words[ 0 ].end )
 		return FIRST_WORD_WITH_A;
 
 	for ( int i = 1; i < _bag.size; i++ ) {
 
-		if ( find( _bag.words[ i ].begin , _bag.words[ i ].end , 'a' ) != _bag.words[ i ].end ||
-			find( _bag.words[ i ].begin , _bag.words[ i ].end , 'A' ) != _bag.words[ i ].end ) {
+		if ( find( _bag.words[ i ].begin , _bag.words[ i ].end , 'a' ) != _bag.words[ i ].end || find( _bag.words[ i ].begin , _bag.words[ i ].end , 'A' ) != _bag.words[ i ].end ) {
 			*beginWordBefore = _bag.words[ i - 1 ].begin;
 			*endWordBefore = _bag.words[ i - 1 ].end;
 

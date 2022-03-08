@@ -14,5 +14,6 @@
 #include "getWordsReversed.h"
 #include "getWordBeforeFirstWordWithA.h"
 #include "lastWordInFirstStringInSecondString.h"
+#include "isStringHasEqualWords.h"
 
 #endif

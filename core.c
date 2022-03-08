@@ -5,6 +5,6 @@
 #include "libs/data_structures/string/tasks/all_tasks.h"
 
 int main( ) {
-	test_lastWordInFirstStringInSecondString1( );
+	test_isStringHasEqualWords1( );
 	return 0;
 }

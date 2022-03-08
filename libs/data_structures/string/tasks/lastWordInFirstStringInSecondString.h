@@ -5,18 +5,19 @@ WordDescriptor lastWordInFirstStringInSecondString( char* s1 , char* s2 ) {
     getBagOfWords( &_bag , s1 );
     getBagOfWords( &_bag2 , s2 );
 
-    WordDescriptor* readBagR = _bag.words + _bag.size - 1;
-    WordDescriptor* readBag2 = _bag2.words;
-    while ( readBagR >= _bag.words ) {
-        WordDescriptor* w = readBag2;
+    WordDescriptor* wordBegin = _bag2.words;
+    WordDescriptor* wordEnd = _bag.words + _bag.size - 1;
+
+    while ( _bag.words <= wordEnd ) {
+        WordDescriptor* w = wordBegin;
         while ( w < _bag2.words + _bag2.size ) {
-            if ( !areWordsEqual( *readBagR , *w ) )
-                return *readBagR;
+            if ( !areWordsEqual( *wordEnd , *w ) )
+                return *wordEnd;
 
             ++w;
         }
 
-        --readBagR;
+        --wordEnd;
     }
 
     return (WordDescriptor){ 0 , 0 };
