@@ -86,6 +86,9 @@
     <ClInclude Include="libs\data_structures\string\tasks\getMergedString.h">
       <Filter>headers\libs\data_structures\string\tasks</Filter>
     </ClInclude>
+    <ClInclude Include="libs\data_structures\string\tasks\getWordsReversed.h">
+      <Filter>headers\libs\data_structures\string\tasks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\data_structures\vector\vector.c">
