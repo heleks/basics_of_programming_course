@@ -31,6 +31,8 @@ int strcmp( const char* lhs , const char* rhs );
 
 char* copy( const char* beginSource , const char* endSource , char* beginDestination );
 
+char* reverseCopy( char* rbeginSource , const char* rendSource , char* beginDestination );
+
 char* copyIf( char* beginSource , const char* endSource , char* beginDestination , int( *f )( int ) );
 
 char* copyIfReverse( char* rbeginSource , const char* rendSource , char* beginDestination , int( *f )( int ) );
@@ -56,5 +58,10 @@ typedef struct BagOfWords {
 	WordDescriptor words[ MAX_N_WORDS_IN_STRING ];
 	size_t size;
 } BagOfWords;
+
+BagOfWords _bag;
+BagOfWords _bag2;
+
+void getBagOfWords( BagOfWords* bag , char* s );
 
 #endif

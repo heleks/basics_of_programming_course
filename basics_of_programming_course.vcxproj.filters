@@ -77,6 +77,9 @@
     <ClInclude Include="libs\data_structures\string\tasks\isOrderedString.h">
       <Filter>headers\libs\data_structures\string\tasks</Filter>
     </ClInclude>
+    <ClInclude Include="libs\data_structures\string\tasks\printReversedWords.h">
+      <Filter>headers\libs\data_structures\string\tasks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\data_structures\vector\vector.c">

@@ -57,6 +57,16 @@ char* copy( const char* beginSource , const char* endSource , char* beginDestina
 	return beginDestination + ( endSource - beginSource );
 }
 
+char* reverseCopy( char* rbeginSource , const char* rendSource , char* beginDestination ) {
+	while ( rbeginSource != rendSource ) {
+		*beginDestination = *rbeginSource;
+		beginDestination++;
+		rbeginSource--;
+	}
+
+	return beginDestination;
+}
+
 char* copyIf( char* beginSource , const char* endSource , char* beginDestination , int ( *f )( int ) ) {
 	while ( beginSource != endSource ) {
 		if ( f( *beginSource ) ) {
@@ -130,4 +140,15 @@ bool areWordsEqual( WordDescriptor w1 , WordDescriptor w2 ) {
 		return false;
 
 	return !memcmp( w1.begin , w2.begin , w1.end - w1.begin );
+}
+
+void getBagOfWords( BagOfWords* bag , char* s ) {
+	bag->size = 0;
+
+	WordDescriptor word;
+	while ( getWord( s , &word ) ) {
+		bag->words[ bag->size ] = word;
+		bag->size++;
+		s = word.end;
+	}
 }

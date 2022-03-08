@@ -8,6 +8,6 @@
 #include "replaceDigitsToSpaces.h"
 #include "replace.h"
 #include "isOrderedString.h"
-#include "getBagOfWords.h"
+#include "printReversedWords.h"
 
 #endif
