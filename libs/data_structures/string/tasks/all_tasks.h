@@ -9,5 +9,6 @@
 #include "replace.h"
 #include "isOrderedString.h"
 #include "printReversedWords.h"
+#include "getCountPalindrom.h"
 
 #endif

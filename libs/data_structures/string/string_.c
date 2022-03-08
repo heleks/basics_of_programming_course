@@ -30,6 +30,20 @@ char* findSpace( char* begin ) {
 	return begin;
 }
 
+char* findComma( char* begin ) {
+	while ( *begin != '\0' && *begin != ',' )
+		++begin;
+
+	return begin;
+}
+
+char* findNonComma( char* begin ) {
+	while ( *begin != '\0' && *begin == ',' )
+		++begin;
+
+	return begin;
+}
+
 char* findNonSpaceReverse( char* rbegin , const char* rend ) {
 	while ( rbegin != rend && isspace( *rbegin ) )
 		--rbegin;
@@ -117,6 +131,16 @@ bool getWord( char* beginSearch , WordDescriptor* word ) {
 		return false;
 
 	word->end = findSpace( word->begin );
+
+	return true;
+}
+
+bool getWordComma( char* beginSearch , WordDescriptor* word ) {
+	word->begin = findNonComma( beginSearch );
+	if ( *word->begin == '\0' )
+		return false;
+
+	word->end = findComma( word->begin );
 
 	return true;
 }

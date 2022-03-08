@@ -23,6 +23,10 @@ char* findNonSpace( char* begin );
 
 char* findSpace( char* begin );
 
+char* findComma( char* begin );
+
+char* findNonComma( char* begin );
+
 char* findNonSpaceReverse( char* rbegin , const char* rend );
 
 char* findSpaceReverse( char* rbegin , const char* rend );
@@ -47,6 +51,8 @@ typedef struct WordDescriptor {
 } WordDescriptor;
 
 bool getWord( char* beginSearch , WordDescriptor* word );
+
+bool getWordComma( char* beginSearch , WordDescriptor* word );
 
 bool getWordReverse( char* rbegin , char* rend , WordDescriptor* word );
 
