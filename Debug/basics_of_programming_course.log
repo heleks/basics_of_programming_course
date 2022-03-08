@@ -3,5 +3,5 @@
 C:\Users\Heleks\source\repos\basics_of_programming_course\basics_of_programming_course\libs\data_structures\string\tasks\replaceDigitsToSpaces.h(8,24): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Heleks\source\repos\basics_of_programming_course\basics_of_programming_course\libs\data_structures\string\tasks\replace.h(21,7): warning C4101: 'word': unreferenced local variable
 C:\Users\Heleks\source\repos\basics_of_programming_course\basics_of_programming_course\libs\data_structures\string\tasks\printReversedWords.h(11,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Heleks\source\repos\basics_of_programming_course\basics_of_programming_course\libs\data_structures\string\tasks\getWordBeforeFirstWordWithA.h(16,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Heleks\source\repos\basics_of_programming_course\basics_of_programming_course\libs\data_structures\string\tasks\getWordBeforeFirstWordWithA.h(15,21): warning C4018: '<': signed/unsigned mismatch
   basics_of_programming_course.vcxproj -> C:\Users\Heleks\source\repos\basics_of_programming_course\Debug\basics_of_programming_course.exe
