@@ -6,5 +6,6 @@
 #include "removeExtraSpaces.h"
 #include "digitToEnd.h"
 #include "replaceDigitsToSpaces.h"
+#include "replace.h"
 
 #endif

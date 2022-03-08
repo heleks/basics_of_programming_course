@@ -50,5 +50,7 @@ bool getWordReverse( char* rbegin , char* rend , WordDescriptor* word );
 
 int getDigit( char x );
 
+bool areWordsEqual( WordDescriptor w1 , WordDescriptor w2 );
+
 
 #endif

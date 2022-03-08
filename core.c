@@ -5,6 +5,6 @@
 #include "libs/data_structures/string/tasks/all_tasks.h"
 
 int main( ) {
-	test_replaceDigitsToSpaces( );
+	test_replace( );
 	return 0;
 }
