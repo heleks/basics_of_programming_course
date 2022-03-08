@@ -70,4 +70,13 @@ BagOfWords _bag2;
 
 void getBagOfWords( BagOfWords* bag , char* s );
 
+typedef enum WordBeforeFirstWordWithAReturnCode {
+	FIRST_WORD_WITH_A ,
+	NOT_FOUND_A_WORD_WITH_A ,
+	WORD_FOUND ,
+	EMPTY_STRING
+} WordBeforeFirstWordWithAReturnCode;
+
+WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA( char* s , char** beginWordBefore , char** endWordBefore );
+
 #endif

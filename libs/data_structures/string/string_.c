@@ -176,3 +176,4 @@ void getBagOfWords( BagOfWords* bag , char* s ) {
 		s = word.end;
 	}
 }
+

@@ -12,5 +12,6 @@
 #include "getCountPalindrom.h"
 #include "getMergedString.h"
 #include "getWordsReversed.h"
+#include "getWordBeforeFirstWordWithA.h"
 
 #endif
