@@ -52,5 +52,9 @@ int getDigit( char x );
 
 bool areWordsEqual( WordDescriptor w1 , WordDescriptor w2 );
 
+typedef struct BagOfWords {
+	WordDescriptor words[ MAX_N_WORDS_IN_STRING ];
+	size_t size;
+} BagOfWords;
 
 #endif

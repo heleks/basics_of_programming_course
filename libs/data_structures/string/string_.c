@@ -129,5 +129,5 @@ bool areWordsEqual( WordDescriptor w1 , WordDescriptor w2 ) {
 	if ( w1.end - w1.begin != w2.end - w2.begin )
 		return false;
 
-	return memcmp( w1.begin , w2.begin , w1.end - w1.begin );
+	return !memcmp( w1.begin , w2.begin , w1.end - w1.begin );
 }

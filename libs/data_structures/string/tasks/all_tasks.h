@@ -7,5 +7,7 @@
 #include "digitToEnd.h"
 #include "replaceDigitsToSpaces.h"
 #include "replace.h"
+#include "isOrderedString.h"
+#include "getBagOfWords.h"
 
 #endif

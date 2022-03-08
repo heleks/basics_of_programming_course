@@ -24,9 +24,9 @@ void replace( char* source , char* w1 , char* w2 ) {
 	while ( getWord( readPtr , &wordNow ) ) {
 		recPtr = copy( readPtr , wordNow.begin , recPtr );
 		if ( areWordsEqual( wordNow , word1 ) )
-			recPtr = copy( wordNow.begin , wordNow.end , recPtr );
-		else
 			recPtr = copy( word2.begin , word2.end , recPtr );
+		else
+			recPtr = copy( wordNow.begin , wordNow.end , recPtr );
 
 		readPtr = wordNow.end;
 	}
