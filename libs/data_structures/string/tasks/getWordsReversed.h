@@ -19,7 +19,7 @@ void getWordsReversed( char* s ) {
 }
 
 void test_getWordsReversed( ) {
-    char s[ ] = "Hello World";
+    char s[ 20 ] = "Hello World";
     getWordsReversed( s );
     ASSERT_STRING( "World Hello" , s );
 }

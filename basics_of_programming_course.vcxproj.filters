@@ -101,6 +101,12 @@
     <ClInclude Include="libs\data_structures\string\tasks\hasWordsFromEqualsChar.h">
       <Filter>headers\libs\data_structures\string\tasks</Filter>
     </ClInclude>
+    <ClInclude Include="libs\data_structures\string\tasks\getStringFromWords.h">
+      <Filter>headers\libs\data_structures\string\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\data_structures\string\tasks\alltests.h">
+      <Filter>headers\libs\data_structures\string\tasks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\data_structures\vector\vector.c">

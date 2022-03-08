@@ -16,5 +16,6 @@
 #include "lastWordInFirstStringInSecondString.h"
 #include "isStringHasEqualWords.h"
 #include "hasWordsFromEqualsChar.h"
+#include "getStringFromWords.h"
 
 #endif

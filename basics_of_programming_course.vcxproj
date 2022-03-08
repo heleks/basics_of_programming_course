@@ -33,10 +33,12 @@
     <ClInclude Include="libs\data_structures\matrix\matrix.h" />
     <ClInclude Include="libs\data_structures\matrix\matrixD.h" />
     <ClInclude Include="libs\data_structures\string\string_.h" />
+    <ClInclude Include="libs\data_structures\string\tasks\alltests.h" />
     <ClInclude Include="libs\data_structures\string\tasks\all_tasks.h" />
     <ClInclude Include="libs\data_structures\string\tasks\digitToEnd.h" />
     <ClInclude Include="libs\data_structures\string\tasks\getCountPalindrom.h" />
     <ClInclude Include="libs\data_structures\string\tasks\getMergedString.h" />
+    <ClInclude Include="libs\data_structures\string\tasks\getStringFromWords.h" />
     <ClInclude Include="libs\data_structures\string\tasks\getWordBeforeFirstWordWithA.h" />
     <ClInclude Include="libs\data_structures\string\tasks\getWordsReversed.h" />
     <ClInclude Include="libs\data_structures\string\tasks\hasWordsFromEqualsChar.h" />
