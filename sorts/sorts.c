@@ -111,3 +111,30 @@ void selectionSort( int* a , int size ) {
         swap( a + i , a + minPos , sizeof a[ minPos ] );
     }
 }
+
+void insertionSort( int* a , int size ) {
+    for ( int i = 1; i < size; ++i ) {
+        int j = i;
+        while ( j > 0 && a[ j - 1 ] > a[ j ] ) {
+            swap( a + j , a + j - 1 , sizeof a[ j ] );
+            --j;
+        }
+    }
+}
+
+void combSort( int* a , int size ) {
+    int step = size;
+    double factor = 1.24733;
+    bool swapped = false;
+    while ( step > 1 || swapped ) {
+        swapped = false;
+        if ( step > 1 )
+            step /= factor;
+        
+        for ( int i = 0 , j = i + step; j < size; ++j , ++i ) 
+            if ( a[ i ] > a[ j ] ) {
+                swap( a + i , a + j , sizeof a[ i ] );
+                swapped = true;
+            }
+    }
+}
