@@ -222,3 +222,165 @@ void _radixSort( int* l , int* r , int N ) {
 void radixSort( int* a , size_t n ) {
     _radixSort( a , a + n , 8 );
 }
+
+long long getSelectionSortNComps( int* a , int size ) {
+    long long nComps = 0;
+
+    for ( int i = 0; ++nComps && i < size - 1; ++i ) {
+        int min = i;
+        for ( int j = i + 1; ++nComps && j < size; ++j ) {
+            if ( a[ j ] < a[ min ] )
+                min = j;
+            
+            ++nComps;
+        }
+
+        swap( a + i , a + min , sizeof a[ 0 ] );
+        ++nComps;
+    }
+
+    return nComps;
+}
+
+long long getBubbleSortNComp( int* a , int size ) {
+    long long nComp = 0;
+    bool flag = false;
+    int k = 0;
+
+    for ( int i = 0; ++nComp && i < size; ++i ) {
+        for ( int j = 1; ++nComp && j < size - k; ++j ) {
+            if ( a[ j ] < a[ j - 1 ] ) {
+                swap( a + j , a + j - 1 , sizeof a[ 0 ] );
+                flag = true;
+                ++nComp;
+            }
+            ++nComp;
+        }
+
+        if ( !flag ) {
+            break;
+
+        }
+        ++k;
+    }
+
+    return nComp;
+}
+
+long long getInsertionSortNComps( int* a , int size ) {
+    long long nComp = 0;
+
+    for ( int i = 1; ++nComp && i < size; ++i ) {
+        int j = i;
+        while ( ++nComp && j > 0 && a[ j ] < a[ j - 1 ] ) {
+            swap( a + j , a + j - 1 , sizeof a[ 0 ] );
+            nComp += 2;
+            --j;
+        }
+    }
+
+    return nComp;
+}
+long long getCombSortNComps( int* a , int size ) {
+    double factor = 1.24733;
+    int step = size;
+    bool swapped;
+    long long nComp = 0;
+    while ( ++nComp && step > 1 || swapped ) {
+        if ( factor > 1 )
+            step /= factor;
+        
+        ++nComp;
+        swapped = false;
+        for ( int i = 0 , j = i + step; ++nComp && j < size; ++i , ++j ) {
+            if ( a[ j ] < a[ i ] ) {
+                swap( a + j , a + i , sizeof a[ 0 ] );
+                ++nComp;
+                swapped = true;
+            }
+
+            ++nComp;
+        }
+    }
+
+    return nComp;
+}
+
+long long getShellSortNComps( int* a , int size ) {
+    long long nComps = 0;
+    for ( int gap = size / 2; ++nComps && gap > 0; gap /= 2 ) {
+        for ( int i = gap; ++nComps && i < size; ++i ) {
+            int j = i;
+            while ( ++nComps && j >= gap && a[ j ] < a[ j - gap ] ) {
+                swap( a + j , a + j - gap , sizeof a[ 0 ] );
+                nComps += 2;
+                j -= gap;
+            }
+        }
+    }
+
+    return nComps;
+}
+
+long long getCountingSortNComps( int* a , int size ) {
+    int* copyOfArray = ( int* )malloc( sizeof( int ) * size );
+    memmove( copyOfArray , a , sizeof( int ) * size );
+
+    int sizeOfIndexArray = getMax( a , size ) + 1;
+    int* indexArray = ( int* )malloc( sizeof( int ) * sizeOfIndexArray );
+    memset( indexArray , 0 , sizeof( int ) * sizeOfIndexArray );
+
+    long long nComp = 3 * size;
+    for ( int i = 0; ++nComp && i < size; ++i )
+        ++indexArray[ a[ i ] ];
+    
+    for ( int i = 1; ++nComp && i < sizeOfIndexArray; ++i )
+        indexArray[ i ] += indexArray[ i - 1 ];
+    
+    for ( int i = 0; ++nComp && i < size; ++i ) {
+        a[ indexArray[ copyOfArray[ i ] ] - 1 ] = copyOfArray[ i ];
+        --indexArray[ copyOfArray[ i ] ];
+    }
+
+    free( copyOfArray );
+    free( indexArray );
+
+    return nComp;
+}
+
+long long _getRadixSort( int* l , int* r , int N ) {
+    long long nComp = 0;
+    int k = ( 32 + N - 1 ) / N;
+    int M = 1 << N;
+    int sz = r - l;
+    int* b = ( int* )malloc( sizeof( int ) * sz );
+    int* c = ( int* )malloc( sizeof( int ) * M );
+
+    for ( int i = 0; ++nComp && i < k; i++ ) {
+        for ( int j = 0; ++nComp && j < M; j++ ) 
+            c[ j ] = 0;
+
+        for ( int* j = l; ++nComp && j < r; j++ ) 
+            c[ digit( *j , i , N , M ) ]++;
+
+        for ( int j = 1; ++nComp && j < M; j++ ) 
+            c[ j ] += c[ j - 1 ];
+
+        for ( int* j = r - 1; ++nComp && j >= l; j-- ) 
+            b[ --c[ digit( *j , i , N , M ) ] ] = *j;
+
+        int cur = 0;
+
+        for ( int* j = l; ++nComp && j < r; j++ ) 
+            *j = b[ cur++ ];
+    }
+
+    free( b );
+    free( c );
+
+    return nComp;
+}
+
+long long getRadixSortNComp( int* a , size_t n ) {
+    return _getRadixSort( a , a + n , 8 );
+}
