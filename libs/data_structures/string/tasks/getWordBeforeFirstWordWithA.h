@@ -1,5 +1,6 @@
 #ifndef getWordBeforeFirstWordWithA_h
 #define getWordBeforeFirstWordWithA_h
+
 WordBeforeFirstWordWithAReturnCode getWordBeforeFirstWordWithA( char* s , char** beginWordBefore , char** endWordBefore ) {
 	char* begin = s;
 	WordDescriptor word;
