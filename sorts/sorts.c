@@ -84,3 +84,19 @@ void generateOrderedBackwards( int* a , size_t size ) {
     qsort( a , size , sizeof a[ 0 ] , compareBackwards );
 }
 
+void bubbleSort( int* a , int size ) {
+    int k = 0;
+    for ( int i = 0; i < size; ++i ) {
+        bool flag = false;
+        for ( int j = 1; j < size - k; ++j )
+            if ( a[ j ] < a[ j - 1 ] ) {
+                swap( a + j , a + j - 1 , sizeof a[ j ] );
+                flag = true;
+            }    
+
+        if ( !flag )
+            break;
+
+        ++k;
+    }
+}
