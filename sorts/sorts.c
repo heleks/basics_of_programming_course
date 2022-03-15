@@ -150,3 +150,36 @@ void shellSort( int* a , int size ) {
         }
     }
 }
+
+int getMax( int* a , int size ) {
+    int index = 0;
+
+    for ( int i = 1; i < size; ++i )
+        if ( a[ i ] > a[ index ] )
+            index = i;
+
+    return a[ index ];
+}
+
+void countingSort( int* a , int size ) {
+    int* copyOfArray = ( int* )malloc( sizeof( int ) * size );
+    memmove( copyOfArray , a , sizeof( int ) * size );
+
+    int sizeOfIndexArray = getMax( a , size ) + 1;
+    int* indexArray = ( int* )malloc( sizeof( int ) * sizeOfIndexArray );
+    memset( indexArray , 0 , sizeof( int ) * sizeOfIndexArray );
+
+    for ( int i = 0; i < size; ++i )
+        ++indexArray[ a[ i ] ];
+    
+    for ( int i = 1; i < sizeOfIndexArray; ++i )
+        indexArray[ i ] += indexArray[ i - 1 ];
+    
+    for ( int i = 0; i < size; ++i ) {
+        a[ indexArray[ copyOfArray[ i ] ] - 1 ] = copyOfArray[ i ];
+        --indexArray[ copyOfArray[ i ] ];
+    }
+
+    free( copyOfArray );
+    free( indexArray );
+}
