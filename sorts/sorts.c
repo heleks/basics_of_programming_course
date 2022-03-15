@@ -138,3 +138,15 @@ void combSort( int* a , int size ) {
             }
     }
 }
+
+void shellSort( int* a , int size ) {
+    for ( int gap = size / 2; gap > 0; gap /= 2 ) {
+        for ( int i = gap; i < size; ++i ) {
+            int j = i;
+            while ( j >= gap && a[ j ] < a[ j - gap ] ) {
+                swap( a + j , a + j - gap , sizeof a[ j ] );
+                j -= gap;
+            }
+        }
+    }
+}
